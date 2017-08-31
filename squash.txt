@@ -1,0 +1,2 @@
+this is squash merge operation 
+and updating the file
