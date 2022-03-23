@@ -10,30 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "sampleData2.json",
+				"fileName": "sampleData3.json",
 				"fileSystem": "raw"
 			}
 		},
-		"schema": {
-			"type": "object",
-			"properties": {
-				"customerid": {
-					"type": "integer"
-				},
-				"customername": {
-					"type": "string"
-				},
-				"registered": {
-					"type": "boolean"
-				},
-				"courses": {
-					"type": "array",
-					"items": {
-						"type": "string"
-					}
-				}
-			}
-		}
+		"schema": {}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
