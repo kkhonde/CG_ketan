@@ -17,7 +17,15 @@
 				"frequency": "Day",
 				"interval": 1,
 				"startTime": "2022-03-23T10:00:00",
-				"timeZone": "India Standard Time"
+				"timeZone": "India Standard Time",
+				"schedule": {
+					"minutes": [
+						5
+					],
+					"hours": [
+						10
+					]
+				}
 			}
 		}
 	}
