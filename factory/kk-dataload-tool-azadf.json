@@ -1,0 +1,9 @@
+{
+	"name": "kk-dataload-tool-azadf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4e126e58-d761-4d79-b5eb-65972a765d78",
+		"tenantId": "1adac871-18b0-437a-9efc-0650da925e4f"
+	}
+}

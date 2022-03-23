@@ -1,0 +1,45 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sampledata.json",
+				"fileSystem": "raw"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"vehicleId": {
+					"type": "string"
+				},
+				"tenantId": {
+					"type": "integer"
+				},
+				"messageType": {
+					"type": "string"
+				},
+				"eventDateTime": {
+					"type": "string"
+				},
+				"alertName": {
+					"type": "string"
+				},
+				"alertState": {
+					"type": "integer"
+				},
+				"headerData": {
+					"type": "null"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
