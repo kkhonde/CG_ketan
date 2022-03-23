@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "Json2",
+						"referenceName": "Json1",
 						"type": "DatasetReference"
 					},
 					"name": "nestedJSON"
@@ -16,31 +16,31 @@
 			"transformations": [
 				{
 					"name": "flatten1"
+				},
+				{
+					"name": "select1"
 				}
 			],
 			"scriptLines": [
-				"source(output(",
-				"          customerid as integer,",
-				"          customername as string,",
-				"          registered as boolean,",
-				"          courses as string[],",
-				"          details as (mobile as string, city as string)",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source(allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'documentPerLine') ~> nestedJSON",
-				"nestedJSON foldDown(unroll(courses, courses),",
+				"select1 foldDown(unroll(courses, courses),",
 				"     mapColumn(",
-				"          courses = courses,",
+				"          courses = courses",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: false) ~> flatten1",
+				"nestedJSON select(mapColumn(",
 				"          customerid,",
 				"          customername,",
 				"          registered,",
-				"          mobile = {details.mobile},",
-				"          city = {details.city}",
+				"          courses,",
+				"          details",
 				"     ),",
-				"     skipDuplicateMapInputs: false,",
-				"     skipDuplicateMapOutputs: false) ~> flatten1"
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
