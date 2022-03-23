@@ -10,39 +10,399 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "PT1H.json",
+				"fileName": "sampleData2.json",
 				"fileSystem": "raw"
 			}
 		},
 		"schema": {
 			"type": "object",
 			"properties": {
-				"count": {
+				"vehicleId": {
+					"type": "string"
+				},
+				"tenantId": {
 					"type": "integer"
 				},
-				"total": {
-					"type": "number"
-				},
-				"minimum": {
-					"type": "number"
-				},
-				"maximum": {
-					"type": "number"
-				},
-				"average": {
-					"type": "number"
-				},
-				"resourceId": {
+				"messageType": {
 					"type": "string"
 				},
-				"time": {
+				"eventDateTime": {
 					"type": "string"
 				},
-				"metricName": {
+				"eventType": {
 					"type": "string"
 				},
-				"timeGrain": {
-					"type": "string"
+				"eventDetails": {
+					"type": "object",
+					"properties": {
+						"telemetryReading": {
+							"type": "object",
+							"properties": {
+								"engineRpm": {
+									"type": "integer"
+								},
+								"gearInfo": {
+									"type": "integer"
+								},
+								"distanceTravelled": {
+									"type": "integer"
+								},
+								"fuelRemaining": {
+									"type": "number"
+								},
+								"gsmMcc": {
+									"type": "integer"
+								},
+								"gpsAccuracyAlt": {
+									"type": "number"
+								},
+								"gyroscopeX": {
+									"type": "number"
+								},
+								"evGearInfo": {
+									"type": "integer"
+								},
+								"gyroscopeZ": {
+									"type": "number"
+								},
+								"gyroscopeY": {
+									"type": "number"
+								},
+								"hvBattPackVoltage": {
+									"type": "number"
+								},
+								"gpsSignalQuality": {
+									"type": "integer"
+								},
+								"vehicleInteriorTemperature": {
+									"type": "number"
+								},
+								"steeringDirection": {
+									"type": "integer"
+								},
+								"vehicleSpeed": {
+									"type": "number"
+								},
+								"hvBattMaxCellVoltage": {
+									"type": "number"
+								},
+								"hvAmpHr": {
+									"type": "number"
+								},
+								"vehicleSpeedTwo": {
+									"type": "number"
+								},
+								"blowerSpeed": {
+									"type": "integer"
+								},
+								"vCUPowerMode": {
+									"type": "integer"
+								},
+								"cumulativeFuelConsumptionRate": {
+									"type": "integer"
+								},
+								"gpsAccuracyLat": {
+									"type": "number"
+								},
+								"engineCoolantTemperature": {
+									"type": "integer"
+								},
+								"transmissionOilTemperature": {
+									"type": "integer"
+								},
+								"outsideAmbientTemperature": {
+									"type": "number"
+								},
+								"gpsLat": {
+									"type": "number"
+								},
+								"steeringAngle": {
+									"type": "number"
+								},
+								"accelerationPedalPosition": {
+									"type": "integer"
+								},
+								"gpsAlt": {
+									"type": "integer"
+								},
+								"atmosphericPressure": {
+									"type": "integer"
+								},
+								"vehicleDriveMode": {
+									"type": "integer"
+								},
+								"hvAmpHrRegen": {
+									"type": "integer"
+								},
+								"gpsCourseAngle": {
+									"type": "integer"
+								},
+								"acCompressorPressure": {
+									"type": "integer"
+								},
+								"accelZ": {
+									"type": "number"
+								},
+								"accelY": {
+									"type": "number"
+								},
+								"accelX": {
+									"type": "number"
+								},
+								"hvBattMinCellVoltage": {
+									"type": "number"
+								},
+								"timestamp": {
+									"type": "integer"
+								},
+								"clutchState": {
+									"type": "integer"
+								},
+								"crankOnEnum": {
+									"type": "integer"
+								},
+								"gsmSignalStrength": {
+									"type": "integer"
+								},
+								"hvBattMinCellTemp": {
+									"type": "integer"
+								},
+								"brkPressStateEnum": {
+									"type": "integer"
+								},
+								"gsmMnc": {
+									"type": "integer"
+								},
+								"engineIdleSpeedTarget": {
+									"type": "integer"
+								},
+								"ignitionOnEnum": {
+									"type": "integer"
+								},
+								"gpsAccuracyLong": {
+									"type": "number"
+								},
+								"acState": {
+									"type": "integer"
+								},
+								"hvBattMaxCellTemp": {
+									"type": "integer"
+								},
+								"gpsLong": {
+									"type": "number"
+								}
+							}
+						},
+						"healthReading": {
+							"type": "object",
+							"properties": {
+								"motorHighTemp": {
+									"type": "integer"
+								},
+								"fuelRemaining": {
+									"type": "integer"
+								},
+								"hvBattTemp": {
+									"type": "integer"
+								},
+								"milLampOnFlagEnum": {
+									"type": "integer"
+								},
+								"nextServiceDueKm": {
+									"type": "integer"
+								},
+								"tCuBattLevelPercentage": {
+									"type": "integer"
+								},
+								"hvBattSocPercentage": {
+									"type": "integer"
+								},
+								"hazardLampOnFlagEnum": {
+									"type": "integer"
+								},
+								"coDriverSeatBeltFlagEnum": {
+									"type": "integer"
+								},
+								"brkVaccumePumpStatusFlagEnum": {
+									"type": "integer"
+								},
+								"rightRearDoorOpenFlagEnum": {
+									"type": "integer"
+								},
+								"tailGateOpenFlagEnum": {
+									"type": "integer"
+								},
+								"hvBattSohPercentage": {
+									"type": "integer"
+								},
+								"frontLeftWheelTyrePressureState": {
+									"type": "integer"
+								},
+								"rearLeftWheelTyrePressure": {
+									"type": "number"
+								},
+								"highTemperatureTelltale": {
+									"type": "integer"
+								},
+								"aBsStateFlagEnum": {
+									"type": "integer"
+								},
+								"spareTyrePressureState": {
+									"type": "integer"
+								},
+								"highBeamLampOnFlagEnum": {
+									"type": "integer"
+								},
+								"fuelLevelPercentage": {
+									"type": "integer"
+								},
+								"leftFrontDoorOpenFlagEnum": {
+									"type": "integer"
+								},
+								"lvBatteryChargingStatus": {
+									"type": "integer"
+								},
+								"engineOilPresLowFlagEnum": {
+									"type": "integer"
+								},
+								"timeToChargeMinute": {
+									"type": "integer"
+								},
+								"vehicleBatteryLevel": {
+									"type": "integer"
+								},
+								"hvBattKWh": {
+									"type": "integer"
+								},
+								"ePAsStateFlagEnum": {
+									"type": "integer"
+								},
+								"nextServiceDueDays": {
+									"type": "integer"
+								},
+								"batteryChargeState": {
+									"type": "integer"
+								},
+								"hvChargingStateEnum": {
+									"type": "integer"
+								},
+								"spareTyrePressure": {
+									"type": "number"
+								},
+								"distancetoEmptyNonEV": {
+									"type": "integer"
+								},
+								"pepsKeyInVehicleFlagEnum": {
+									"type": "integer"
+								},
+								"hvChargerConnectFlagEnum": {
+									"type": "integer"
+								},
+								"leftRearDoorOpenFlagEnum": {
+									"type": "integer"
+								},
+								"bonnetOpenFlagEnum": {
+									"type": "integer"
+								},
+								"hDcStateFlagEnum": {
+									"type": "integer"
+								},
+								"frontLeftWheelTyrePressure": {
+									"type": "number"
+								},
+								"rearLeftWheelTyrePressureState": {
+									"type": "integer"
+								},
+								"lowLvBattChargeFlagEnum": {
+									"type": "integer"
+								},
+								"transmissionMalfunctionFlagEnum": {
+									"type": "integer"
+								},
+								"hHcStateFlagEnum": {
+									"type": "integer"
+								},
+								"fuelLevelLowFlagEnum": {
+									"type": "integer"
+								},
+								"rearRightWheelTyrePressure": {
+									"type": "number"
+								},
+								"approchLampOnFlagEnum": {
+									"type": "integer"
+								},
+								"distanceToEmpty": {
+									"type": "integer"
+								},
+								"rightFrontDoorOpenFlagEnum": {
+									"type": "integer"
+								},
+								"driverSeatBeltFlagEnum": {
+									"type": "integer"
+								},
+								"nextServiceDueWarningFlagEnum": {
+									"type": "integer"
+								},
+								"sRsWarningLampFlagEnum": {
+									"type": "integer"
+								},
+								"rearRightWheelTyrePressureState": {
+									"type": "integer"
+								},
+								"tCuHealthState": {
+									"type": "integer"
+								},
+								"driveMotorStatusFlagEnum": {
+									"type": "integer"
+								},
+								"lowHvBattChargeFlagEnum": {
+									"type": "integer"
+								},
+								"positionLampOnFlagEnum": {
+									"type": "integer"
+								},
+								"hVCriticalState": {
+									"type": "integer"
+								},
+								"frontRightWheelTyrePressureState": {
+									"type": "integer"
+								},
+								"parkBrakePressStateFlagEnum": {
+									"type": "integer"
+								},
+								"vCuMalfunctionFlagEnum": {
+									"type": "integer"
+								},
+								"lowBeamLampOnFlagEnum": {
+									"type": "integer"
+								},
+								"frontRightWheelTyrePressure": {
+									"type": "number"
+								},
+								"eVSystemWarning": {
+									"type": "integer"
+								},
+								"hvBattHighTempFlagEnum": {
+									"type": "integer"
+								},
+								"hvBattMaxCellTemp": {
+									"type": "integer"
+								},
+								"vehicleLockState": {
+									"type": "integer"
+								},
+								"timeToChargeHour": {
+									"type": "integer"
+								}
+							}
+						},
+						"vehicleDoorType": {
+							"type": "string"
+						}
+					}
+				},
+				"headerData": {
+					"type": "null"
 				}
 			}
 		}
