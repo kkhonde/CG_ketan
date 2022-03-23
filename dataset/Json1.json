@@ -10,33 +10,39 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "sampledata.json",
+				"fileName": "PT1H.json",
 				"fileSystem": "raw"
 			}
 		},
 		"schema": {
 			"type": "object",
 			"properties": {
-				"vehicleId": {
-					"type": "string"
-				},
-				"tenantId": {
+				"count": {
 					"type": "integer"
 				},
-				"messageType": {
+				"total": {
+					"type": "number"
+				},
+				"minimum": {
+					"type": "number"
+				},
+				"maximum": {
+					"type": "number"
+				},
+				"average": {
+					"type": "number"
+				},
+				"resourceId": {
 					"type": "string"
 				},
-				"eventDateTime": {
+				"time": {
 					"type": "string"
 				},
-				"alertName": {
+				"metricName": {
 					"type": "string"
 				},
-				"alertState": {
-					"type": "integer"
-				},
-				"headerData": {
-					"type": "null"
+				"timeGrain": {
+					"type": "string"
 				}
 			}
 		}
