@@ -16,31 +16,28 @@
 			"transformations": [
 				{
 					"name": "flatten1"
-				},
-				{
-					"name": "select1"
 				}
 			],
 			"scriptLines": [
-				"source(allowSchemaDrift: false,",
+				"source(output(",
+				"          customerid as integer,",
+				"          customername as string,",
+				"          registered as boolean,",
+				"          courses as string[]",
+				"     ),",
+				"     allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     documentForm: 'documentPerLine') ~> nestedJSON",
-				"select1 foldDown(unroll(courses, courses),",
+				"     documentForm: 'arrayOfDocuments') ~> nestedJSON",
+				"nestedJSON foldDown(unroll(courses, courses),",
 				"     mapColumn(",
-				"          courses = courses",
-				"     ),",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: false) ~> flatten1",
-				"nestedJSON select(mapColumn(",
-				"          customerid,",
+				"          CustomerId = customerid,",
 				"          customername,",
 				"          registered,",
-				"          courses,",
-				"          details",
+				"          courses",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: false) ~> flatten1"
 			]
 		}
 	}
