@@ -12,13 +12,24 @@
 					"name": "nestedJSON"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "binary",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "flatten1"
 				},
 				{
 					"name": "select1"
+				},
+				{
+					"name": "AZ900"
 				}
 			],
 			"scriptLines": [
@@ -48,7 +59,22 @@
 				"          CourseName = courses",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 split(CourseName == 'AZ-900',",
+				"     CourseName == 'AZ-500',",
+				"     CourseName == 'AZ-200',",
+				"     CourseName == 'AZ-303',",
+				"     disjoint: true) ~> AZ900@(AZ900, AZ500, AZ200, AZ303)",
+				"AZ900@AZ900 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
