@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "course_az_900",
+				"fileName": "course_az_500",
 				"fileSystem": "raw"
 			},
 			"compressionCodec": "snappy"
