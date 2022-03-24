@@ -1,0 +1,26 @@
+{
+	"name": "NestedJSON",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-03-23T01:30:00",
+				"endTime": "2022-03-25T16:00:00",
+				"timeZone": "India Standard Time",
+				"schedule": {
+					"minutes": [
+						25
+					],
+					"hours": [
+						11
+					]
+				}
+			}
+		}
+	}
+}
